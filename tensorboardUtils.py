@@ -40,9 +40,6 @@ class customTensorboardInfo(keras.callbacks.Callback):
             for j in range(validationData[1].shape[0]):
                 cMatrix[truth[j],predictions[j]] += 1
 
-        # cMatrix has rows of ground truth and columns of prediction values
-        # log it for the epoch it is in as a markdown table
-
         writer = tf.summary.FileWriter(self.logdir)
 
         header_row = 'T \ P | No school | School'
@@ -59,7 +56,6 @@ class customTensorboardInfo(keras.callbacks.Callback):
             writer.add_summary(summary)
         writer.close()
 
-    # convert to on_epoch_end
     def on_epoch_begin(self, epoch, logs={}):
         self.saveModel(epoch)
         self.confusionMatrix(epoch)
