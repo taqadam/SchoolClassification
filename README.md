@@ -1,6 +1,6 @@
 # SchoolsClassification
 
-We develop a model that can identify whether a satellite image is of a school or not. This is part of a project for mapping schools for the world!
+We develop a model that can identify whether a satellite image is of a school or not. This is part of a project for mapping schools all over the world!
 
 # Training the model
 
