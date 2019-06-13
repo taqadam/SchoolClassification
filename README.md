@@ -11,6 +11,15 @@ The hdf5 files are a specific split of the dataset (90% training 10% testing), f
 
 Our dataset includes images of schools and areas without schools. The typical area covered by the images is 400m by 400m. The schools are not always at the center of the picture. In order to make the problem more challenging, the collection of images without schools were taken from places near the schools, so as to keep the distribution of features similar between pairs of opposite-class images.
 
+For example, images that include schools include:
+
+<img src=https://github.com/taqadam/SchoolClassification/blob/master/DatasetExamples/Ex1School.jpg width=224px height=224px><img src=https://github.com/taqadam/SchoolClassification/blob/master/DatasetExamples/Ex2School.jpg width=224px height=224px>
+
+whereas images without schools include:
+
+<img src=https://github.com/taqadam/SchoolClassification/blob/master/DatasetExamples/Ex1NoSchool.jpg width=224px height=224px><img src=https://github.com/taqadam/SchoolClassification/blob/master/DatasetExamples/Ex2NoSchool.jpg width=224px height=224px>
+
+
 # Pre-processing
 
 We normalize the images based on the mean and standard deviation of a subset of the training dataset. For data augmentation we use random flipping (vertically and horizontally), as satellite images are typically invariant to orientation changes. We downscale the images to 224x224 or 518x518 crops.
