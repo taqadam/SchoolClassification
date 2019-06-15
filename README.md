@@ -1,15 +1,18 @@
 # SchoolsClassification
 
-We develop a model that can identify whether a satellite image is of a school or not. This is part of a project for mapping schools all over the world!
+A model that identifies whether a school is present in a satellite image. This is part of a project for mapping schools all over the world!
 
 # Training the model
 
-Assuming a path to two .hdf5 files that contain the dataset, we run the program with "python main.py --targetFolder <.hdf5 folder path>".
+Assuming a path to two .hdf5 files that contain the dataset run: 
+
+`python main.py --targetFolder <.hdf5 folder path>`
+
 The hdf5 files are a specific split of the dataset (90% training 10% testing), from more than 4000 images that are evenly split between the "school present" and "school not present" categories.
 
 # Dataset
 
-Our dataset includes images of schools and areas without schools. The typical area covered by the images is 400m by 400m. The schools are not always at the center of the picture. In order to make the problem more challenging, the collection of images without schools were taken from places near the schools, so as to keep the distribution of features similar between pairs of opposite-class images.
+Our dataset contains satellite images with area coverage of 400m by 400m. Each image has a label indicating whether a school is present or not within the image. To make our model more robust, schools are not always at the center of the image. We also balanced the training data by collecting of images without schools from places near the schools.
 
 For example, images that include schools include:
 
@@ -18,7 +21,6 @@ For example, images that include schools include:
 whereas images without schools include:
 
 <img src=https://github.com/taqadam/SchoolClassification/blob/master/DatasetExamples/Ex1NoSchool.jpg width=224px height=224px><img src=https://github.com/taqadam/SchoolClassification/blob/master/DatasetExamples/Ex2NoSchool.jpg width=224px height=224px>
-
 
 # Pre-processing
 
@@ -31,14 +33,14 @@ Our model achieves approximately 80% accuracy at 20 epochs of training.
 
 # Structure
 
-datasplitter.py - is used to create the two .hdf5 files from two folders of training data (one for each class)
+`datasplitter.py` - is used to create the two .hdf5 files from two folders of training data (one for each class)
 
-cycler.py - an implementation of cyclical learning rate to help train the model
+`cycler.py` - an implementation of cyclical learning rate to help train the model
 
-generator.py - data augmentation and processing before it is given to the network
+`generator.py` - data augmentation and processing before it is given to the network
 
-mymodels.py - contain the model architectures and optimizers
+`mymodels.py` - contain the model architectures and optimizers
 
-main.py - the entry point for training the model
+`main.py` - the entry point for training the model
 
-tensorboardUtils.py - for visualizing results, producing accuracy and loss figures and calculating the confusion matrices
+`tensorboardUtils.py` - for visualizing results, producing accuracy and loss figures and calculating the confusion matrices
