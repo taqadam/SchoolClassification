@@ -1,4 +1,4 @@
-# SchoolsClassification
+# Schools Classification from Satellite Imagery
 
 A model that identifies whether a school is present in a satellite image. This is part of a project for mapping schools all over the world!
 
